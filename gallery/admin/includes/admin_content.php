@@ -8,16 +8,40 @@
                     <small>Subheading</small>
                 </h1>
                 <?php 
-                    include("user.php");
+                    //include("user.php");functions autoload should hope fully catch this class
                     $allusers = User::get_all_users();
-                    while($row = mysqli_fetch_array($allusers)){
-                        //var_dump($row);
-                        echo $row['username'] . "<br>";
-                    }
 
-                    $unique_user = User::get_user_by_id(2);
-                    //var_dump($unique_user);
-                    echo $unique_user['username'] . " was our " . $unique_user['id'] . "nd user!"
+                    foreach($allusers as $user){
+                        //var_dump($user);
+                        echo $user->username . "<br>";
+                    }
+                    $found_user = User::get_user_by_id(2);
+                    echo $found_user->username . "<br>";
+                    echo $found_user->password . "<br>";
+                    
+
+                    // $user = User::attribute($found_user);
+                    // echo $user->username;
+                    // var_dump($allusers);
+                    // foreach($allusers as $user) {
+                    //     //var_dump($user);
+                    // }
+                    // while($row = mysqli_fetch_array($allusers)){
+                    //     //var_dump($row);
+                    //     echo $row['username'] . "<br>";
+                    // }
+
+                    // $unique_user = User::get_user_by_id(2);
+                    // $this_user = User::attribute($unique_user);
+                    // $user_attributes = new User();
+                    // $user_attributes->username = $unique_user['username'];
+                    // $user_attributes->password = $unique_user['password'];
+                    // $user_attributes->id = $unique_user['id'];
+                    // $user_attributes->first_name = $unique_user['first_name'];
+                    // $user_attributes->last_name = $unique_user['last_name'];
+
+                    // echo $user_attributes->username . " was our " . $user_attributes->id . "nd user";
+                    
                    
                    
                     // $sql = "SELECT * FROM users WHERE id = 1";
