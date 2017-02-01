@@ -8,7 +8,7 @@
                     <small>Subheading</small>
                 </h1>
                 <?php 
-                    //had includes now use require_once with functions autoloader
+                    //had includes now use require_once with functions autoloaderxx
                     $allusers = User::get_all_users();
 
                     foreach($allusers as $user){
