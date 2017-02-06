@@ -68,6 +68,49 @@
 			return array_key_exists($property, $object_properties);
 		}
 
+		public function create()
+		{
+			global $database;
+			$sql = "INSERT INTO users (username, password, first_name, last_name)";
+			$sql .= "VALUES ('";
+			$sql .= $database->escape_string($this->username) . "', '"; 
+			$sql .= $database->escape_string($this->password) . "', '";
+			$sql .= $database->escape_string($this->first_name) . "', '";
+			$sql .= $database->escape_string($this->last_name). "')";
+
+			if($database->query($sql)) {
+				$this->id = $database->the_insert_id();
+			} else {
+				return false;
+			}
+		}
+
+		public function update()
+		{
+			global $database; 
+
+			$sql_update = "UPDATE users SET ";
+			$sql_update .= "username= '" . $database->escape_string($this->username) . "', ";
+			$sql_update .= "password= '" . $database->escape_string($this->password) . "', ";
+			$sql_update .= "first_name= '" .$database->escape_string($this->first_name). "', ";
+			$sql_update .= "last_name= '" .$database->escape_string($this->last_name) . "' ";
+			$sql_update .= " WHERE id= " .$database->escape_string($this->id);
+
+			$database->query($sql_update);
+
+			//return (mysqli_affected_row($database->connection) == 1) ? true : false;
+		}
+
+		public function delete()
+		{
+			global $database;
+			$sql_delete = "DELETE FROM users ";
+			$sql_delete .= "WHERE id=" . $database->escape_string($this->id); //no string required because of int
+			$sql_delete .= " LIMIT 1";
+
+			$database->query($sql_delete);
+		}
+
 	}
 
  ?>

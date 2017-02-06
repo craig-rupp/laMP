@@ -9,46 +9,30 @@
                 </h1>
                 <?php 
                     //had includes now use require_once with functions autoloaderxx
-                    $allusers = User::get_all_users();
+                    // $allusers = User::get_all_users();
 
-                    foreach($allusers as $user){
-                        //var_dump($user);
-                        echo $user->username . "<br>";
-                    }
-                    $found_user = User::get_user_by_id(2);
-                    echo $found_user->username . "<br>";
-                    echo $found_user->password . "<br>";
-                    
-
-                    // $user = User::attribute($found_user);
-                    // echo $user->username;
-                    // var_dump($allusers);
-                    // foreach($allusers as $user) {
+                    // foreach($allusers as $user){
                     //     //var_dump($user);
+                    //     echo $user->username . "<br>";
                     // }
-                    // while($row = mysqli_fetch_array($allusers)){
-                    //     //var_dump($row);
-                    //     echo $row['username'] . "<br>";
-                    // }
+                    // $found_user = User::get_user_by_id(2);
+                    // echo $found_user->username . "<br>";
+                    // echo $found_user->password . "<br>";
 
-                    // $unique_user = User::get_user_by_id(2);
-                    // $this_user = User::attribute($unique_user);
-                    // $user_attributes = new User();
-                    // $user_attributes->username = $unique_user['username'];
-                    // $user_attributes->password = $unique_user['password'];
-                    // $user_attributes->id = $unique_user['id'];
-                    // $user_attributes->first_name = $unique_user['first_name'];
-                    // $user_attributes->last_name = $unique_user['last_name'];
+                    // $user = new User();
+                    // $user->username = "Alexis7";
+                    // $user->password = "SanchezBaby";
+                    // $user->first_name = "Alexis";
+                    // $user->last_name = "Sanchez";
 
-                    // echo $user_attributes->username . " was our " . $user_attributes->id . "nd user";
-                    
-                   
-                   
-                    // $sql = "SELECT * FROM users WHERE id = 1";
-                    // $result = $database->query($sql);
-                    // $user_found = mysqli_fetch_array($result);
-                    // print_r($user_found['username'] . "<br>");
-                   
+                    // $user->create();
+                    // $user = new User();
+                    // $user = User::get_user_by_id(2); //static method call
+                    // $user->last_name = "LewisN&News";
+
+                    // $user->update();
+                    $user = User::get_user_by_id(6);
+                    $user->delete();
 
 
                  ?>
