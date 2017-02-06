@@ -21,19 +21,43 @@
 
                     // $user = new User();
                     // $user->username = "Alexis7";
-                    // $user->password = "SanchezBaby";
-                    // $user->first_name = "Alexis";
-                    // $user->last_name = "Sanchez";
+                    // $user->password = "PAY";
+                    // $user->first_name = "Alexisssss";
+                    // $user->last_name = "SuperSanchez";
 
                     // $user->create();
+
+                    // $delete = User::get_user_by_id(12);
+                    // $delete->delete();
                     // $user = new User();
                     // $user = User::get_user_by_id(2); //static method call
                     // $user->last_name = "LewisN&News";
 
-                    // $user->update();
-                    $user = User::get_user_by_id(6);
-                    $user->delete();
+                    
+                    // $user = User::get_user_by_id(3);
+                    // $user->last_name = "Mucho Suave";
+                    // $user->save();
 
+                    // $anotherUser = new User();
+                    // $anotherUser->username = "Mesut";
+                    // $anotherUser->first_name = "Mesut";
+                    // $anotherUser->last_name = "Ozil";
+                    // $anotherUser->password = "Massitgician";
+                    // $anotherUser->save();
+
+                    // $deleteTest = User::get_user_by_id(11);
+                    // $deleteTest->delete();
+
+                    $mesutUpdate = User::get_user_by_id(9);
+                    $mesutUpdate->username = "mesut_afc_11";
+                    $mesutUpdate->update();
+
+                    // $newUser = new User();
+                    // $newUser->username = "Arsenal";
+                    // $newUser->password = "FC49!";
+                    // $newUser->first_name = "Gunners";
+                    // $newUser ->last_name = "LONDON";
+                    // $newUser->save();
 
                  ?>
                 <ol class="breadcrumb">
