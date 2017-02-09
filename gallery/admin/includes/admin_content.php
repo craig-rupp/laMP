@@ -65,10 +65,25 @@
                     // $newUser->first_name = "Gunners";
                     // $newUser ->last_name = "LONDON";
                     // $newUser->save();
-                    $test = User::get_all_users();
-                    foreach ($test as $user) {
-                        echo $user->username;
+                    // $test = User::get_all_users();
+                    // foreach ($test as $user) {
+                    //     echo $user->username;
+                    // }
+
+                    // $testNew = new User();
+                    // $testNew->username = "Static Binding";
+                    // $testNew->save();
+
+                    $testPhoto = Photo::get_all_items();
+                    foreach ($testPhoto as  $photo) {
+                        echo $photo->description;
                     }
+
+                    $newPhotos = new Photo();
+                    $newPhotos->title = 'Arsenal';
+                    $newPhotos->type = "PDF";
+                    $newPhotos->size = 120;
+                    $newPhotos->save();
 
                  ?>
                 <ol class="breadcrumb">
