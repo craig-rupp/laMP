@@ -48,9 +48,16 @@
                     // $deleteTest = User::get_user_by_id(11);
                     // $deleteTest->delete();
 
-                    $mesutUpdate = User::get_user_by_id(9);
-                    $mesutUpdate->username = "mesut_afc_11";
-                    $mesutUpdate->update();
+                    // $mesutUpdate = User::get_user_by_id(9);
+                    // $mesutUpdate->username = "mesut_afc_11";
+                    // $mesutUpdate->update();
+
+                    // $newUser = new User();
+                    // $newUser->first_name = "Jack";
+                    // $newUser->last_name = "Wilshere";
+                    // $newUser->username = "JWilsh";
+                    // $newUser->password = "SherePowere";
+                    // $newUser->save();
 
                     // $newUser = new User();
                     // $newUser->username = "Arsenal";
@@ -58,6 +65,10 @@
                     // $newUser->first_name = "Gunners";
                     // $newUser ->last_name = "LONDON";
                     // $newUser->save();
+                    $test = User::get_all_users();
+                    foreach ($test as $user) {
+                        echo $user->username;
+                    }
 
                  ?>
                 <ol class="breadcrumb">
