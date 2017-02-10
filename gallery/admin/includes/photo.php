@@ -31,7 +31,7 @@
 			if(empty($file) || !$file || !is_array($file)){
 				$this->custom_errors[] = "There was no file uploaded here";
 				return false;
-			} elseif ($file['error'] >= 1){
+			} elseif ($file['error'] != 0){
 				$this->custom_errors[] = $this->upload_errors_array[$file['error']];
 				return false;
 			} else {
@@ -40,8 +40,46 @@
 				$this->type = $file['type'];
 				$this->size = $file['size'];
 			}
+		}
 
+		public function picture_path()
+		{
+			return $this->upload_directory.DS.$this->filename;
+		}
 
+		public function save()
+		{
+			if($this->photo_id){
+				$this->update();
+			} else {
+				if(!empty($this->custom_errors)){
+					return false;
+				}
+				if(empty($this->filename) || empty($this->tmp_path)){
+					$this->custom_errors[] = "the file was not available";
+					return false;
+				}
+
+				$target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->filename;
+
+				if(file_exists($target_path)){
+					$this->custom_errors[] = "this file, {$this->filename} already exists numnuts";
+					return false;
+				}
+
+				if(move_uploaded_file($this->tmp_path, $target_path)){
+					//move uploaded filed takes filename, destination
+					if($this->create()){
+						unset($this->tmp_path);
+						return true;
+					}
+				}
+				else {
+					$this->custom_errors[] = "the file directory likely does not have permission";
+					return false;
+				}
+				 
+			}
 		}
 	}
 
