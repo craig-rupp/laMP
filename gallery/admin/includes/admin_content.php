@@ -87,8 +87,8 @@
 
                     $user = User::find_by_id(7);
                     echo $user->username . "<br>";
-                    $photo = Photo::find_by_id(9);
-                    echo $photo->title;
+                    // $photo = Photo::find_by_id(9);
+                    // echo $photo->title;
 
                  ?>
                 <ol class="breadcrumb">

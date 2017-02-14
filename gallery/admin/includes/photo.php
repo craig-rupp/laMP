@@ -8,8 +8,10 @@
 		public $filename;
 		public $type;
 		public $size;
+		public $caption;
+		public $alt_text;
 		protected static $db_table = "photos";
-		protected static $db_table_fields = ['title', 'description', 'filename', 'type', 'size'];
+		protected static $db_table_fields = ['title', 'description', 'filename', 'type', 'size', 'caption', 'alt_text'];
 
 		public $tmp_path;
 		public $upload_directory = 'images';
@@ -81,6 +83,23 @@
 				 
 			}
 		}
-	}
+
+		public function delete_photo()
+		{
+			if($this->delete()){
+
+				$target_path = SITE_ROOT . DS . 'admin' . DS . $this->picture_path();
+
+				return unlink($target_path) ? true : false;
+
+			} else {
+
+				return false;
+			}
+
+		}
+
+
+	} //End of Class
 
  ?>
