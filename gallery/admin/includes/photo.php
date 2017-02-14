@@ -4,7 +4,7 @@
 	{
 		public $title;
 		public $description;
-		public $photo_id;
+		public $id;
 		public $filename;
 		public $type;
 		public $size;
@@ -49,7 +49,7 @@
 
 		public function save()
 		{
-			if($this->photo_id){
+			if($this->id){
 				$this->update();
 			} else {
 				if(!empty($this->custom_errors)){

@@ -10,7 +10,7 @@
 			return $result_set;
 		}
 
-		public static function get_user_by_id($id)
+		public static function find_by_id($id)
 		{
 			global $database;
 			$result_array = static::find_this_query("SELECT * FROM " . static::$db_table . " WHERE id = $id LIMIT 1");

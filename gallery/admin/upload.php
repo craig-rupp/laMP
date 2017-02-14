@@ -9,7 +9,7 @@
         $photo->set_file($_FILES['file_upload']); //sg key
         if($photo->save()){
             $message = "Photo {$photo->filename} was successfully uploaded";
-            echo $message;
+            //echo $message;
         } else {
             $message = join("<br>", $photo->custom_errors);
         }

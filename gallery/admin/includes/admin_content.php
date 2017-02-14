@@ -74,16 +74,21 @@
                     // $testNew->username = "Static Binding";
                     // $testNew->save();
 
-                    $testPhoto = Photo::get_all_items();
-                    foreach ($testPhoto as  $photo) {
-                        echo $photo->description;
-                    }
+                    // $testPhoto = Photo::get_all_items();
+                    // foreach ($testPhoto as  $photo) {
+                    //     echo $photo->description;
+                    // }
 
-                    $newPhotos = new Photo();
-                    $newPhotos->title = 'Arsenal';
-                    $newPhotos->type = "PDF";
-                    $newPhotos->size = 120;
-                    $newPhotos->save();
+                    // $newPhotos = new Photo();
+                    // $newPhotos->title = 'Arsenal';
+                    // $newPhotos->type = "PDF";
+                    // $newPhotos->size = 120;
+                    // $newPhotos->save();
+
+                    $user = User::find_by_id(7);
+                    echo $user->username . "<br>";
+                    $photo = Photo::find_by_id(9);
+                    echo $photo->title;
 
                  ?>
                 <ol class="breadcrumb">
