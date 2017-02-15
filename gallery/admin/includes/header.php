@@ -1,5 +1,5 @@
 <?php require_once("init.php"); ?>
-
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +30,7 @@
     <![endif]-->
 
     <!-- Edit Photo Brief CSS -->
-    <link href="css/edit_photo.css" rel="stylesheet">
+    <link href="css/edit_photo.css" rel="stylesheet" type="text/css">
 
 </head>
 
