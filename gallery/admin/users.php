@@ -46,11 +46,11 @@ $users = User::get_all_items();
                             Users
                          
                         </h1>
-                          <p class="bg-success">
+                          <!-- <p class="bg-success">
                             
-                        </p>
+                        </p> -->
 
-                        <!-- <a href="add_user.php" class="btn btn-primary">Add User</a> -->
+                        <a href="add_user.php" class="btn btn-primary">Add User</a>
 
 
                         <div class="col-md-12">
