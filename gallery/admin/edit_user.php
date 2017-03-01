@@ -92,8 +92,8 @@
 
                       <div class="col-md-6 user_image_box">
                           
-                        <!--  <a href="#" data-toggle="modal" data-target="#photo-library"><img class="img-responsive" src="//php echo $user->image_path_and_placeholder(); " alt=""></a>
- -->
+                         <a href="#" data-toggle="modal" data-target="#photo-library"><img class="img-responsive" src="<?php echo $user->user_image_placeholder(); ?>" alt=""></a>
+
 
 
                       </div>
