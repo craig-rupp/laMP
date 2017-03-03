@@ -4,101 +4,120 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Blank Page
-                    <small>Subheading</small>
+                    Admin
+                    <small>Dashboard</small>
                 </h1>
-                <?php 
-                    //had includes now use require_once with functions autoloaderxx
-                    // $allusers = User::get_all_users();
+               <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-users fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"><?php echo $session->count; ?></div>
+                                        <div>New Views</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <!--  <div>Page View from Gallery</div> -->
+                                  <span class="pull-left">View Details</span> 
+                               <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span> 
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
-                    // foreach($allusers as $user){
-                    //     //var_dump($user);
-                    //     echo $user->username . "<br>";
-                    // }
-                    // $found_user = User::get_user_by_id(2);
-                    // echo $found_user->username . "<br>";
-                    // echo $found_user->password . "<br>";
+                     <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-green">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-photo fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"><?php echo Photo::count_all(); ?></div>
+                                        <div>Photos</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Total Photos in Gallery</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
-                    // $user = new User();
-                    // $user->username = "Alexis7";
-                    // $user->password = "PAY";
-                    // $user->first_name = "Alexisssss";
-                    // $user->last_name = "SuperSanchez";
 
-                    // $user->create();
+                     <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-yellow">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-user fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge">
+                                            <?php echo User::count_all(); ?>
+                                        </div>
 
-                    // $delete = User::get_user_by_id(12);
-                    // $delete->delete();
-                    // $user = new User();
-                    // $user = User::get_user_by_id(2); //static method call
-                    // $user->last_name = "LewisN&News";
+                                        <div>Users</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Total Users</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
-                    
-                    // $user = User::get_user_by_id(3);
-                    // $user->last_name = "Mucho Suave";
-                    // $user->save();
+                      <div class="col-lg-3 col-md-6">
+                        <div class="panel panel-red">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-support fa-5x"></i>
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div class="huge"><?php echo Comment::count_all(); ?></div>
+                                        <div>Comments</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Total Comments</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
 
-                    // $anotherUser = new User();
-                    // $anotherUser->username = "Mesut";
-                    // $anotherUser->first_name = "Mesut";
-                    // $anotherUser->last_name = "Ozil";
-                    // $anotherUser->password = "Massitgician";
-                    // $anotherUser->save();
 
-                    // $deleteTest = User::get_user_by_id(11);
-                    // $deleteTest->delete();
+                </div> <!--First Row-->
 
-                    // $mesutUpdate = User::get_user_by_id(9);
-                    // $mesutUpdate->username = "mesut_afc_11";
-                    // $mesutUpdate->update();
+                <div class="row">
 
-                    // $newUser = new User();
-                    // $newUser->first_name = "Jack";
-                    // $newUser->last_name = "Wilshere";
-                    // $newUser->username = "JWilsh";
-                    // $newUser->password = "SherePowere";
-                    // $newUser->save();
 
-                    // $newUser = new User();
-                    // $newUser->username = "Arsenal";
-                    // $newUser->password = "FC49!";
-                    // $newUser->first_name = "Gunners";
-                    // $newUser ->last_name = "LONDON";
-                    // $newUser->save();
-                    // $test = User::get_all_users();
-                    // foreach ($test as $user) {
-                    //     echo $user->username;
-                    // }
+                 <div id="piechart" style="width: 900px; height: 500px;"></div>
+                
 
-                    // $testNew = new User();
-                    // $testNew->username = "Static Binding";
-                    // $testNew->save();
 
-                    // $testPhoto = Photo::get_all_items();
-                    // foreach ($testPhoto as  $photo) {
-                    //     echo $photo->description;
-                    // }
+                </div>
 
-                    // $newPhotos = new Photo();
-                    // $newPhotos->title = 'Arsenal';
-                    // $newPhotos->type = "PDF";
-                    // $newPhotos->size = 120;
-                    // $newPhotos->save();
 
-                    $user = User::find_by_id(7);
-                    echo $user->username . "<br>";
-                    // $photo = Photo::find_by_id(9);
-                    // echo $photo->title;
-
-                 ?>
-                <ol class="breadcrumb">
-                    <li>
-                        <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                    </li>
-                    <li class="active">
-                        <i class="fa fa-file"></i> Blank Page
-                    </li>
-                </ol>
             </div>
         </div>
         <!-- /.row -->

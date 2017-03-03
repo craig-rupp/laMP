@@ -5,12 +5,14 @@
 		private $signed_in = false;
 		public $user_id;
 		public $message;
+		public $count;
 
 		function __construct()
 		{
 			session_start();
 			$this->check_log_in();
 			$this->check_message();
+			$this->visitor_count();
 		}
 
 		public function message($msg = "") 
@@ -62,6 +64,15 @@
 			} else {
 				unset($this->user_id);
 				$this->signed_in = false;
+			}
+		}
+
+		public function visitor_count()
+		{
+			if(isset($_SESSION['count'])){
+				return $this->count = $_SESSION['count']++;
+			} else {
+				return $_SESSION['count'] = 1;
 			}
 		}
 	}
