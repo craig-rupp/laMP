@@ -2,3 +2,9 @@
 	width : 200px !important;
 	height: 150px !important;
 }
+
+/*** Home Page Pagination **/
+.pager .active a{
+	background-color: papayawhip !important;
+	color: black !important;
+}
