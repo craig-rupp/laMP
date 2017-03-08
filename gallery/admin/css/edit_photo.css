@@ -1,11 +1,11 @@
 .admin-photo-thumbnail{
-	width: 200px !important;
-	border-radius: 5px !important;
+  width: 200px !important;
+  border-radius: 5px !important;
 }
 
 .user_image {
-	width: 60px !important;
-	height: 60px !important;
+  width: 60px !important;
+  height: 60px !important;
 
 }
 
@@ -45,7 +45,7 @@ padding: 7px 9px 19px;
 
 .photo-info-box .box-inner .data {
 
-	font-weight: bold;
+  font-weight: bold;
 }
 
 .photo-info-box .info-box-footer{
@@ -55,3 +55,41 @@ background-color: #ddd;
 padding: 10px;
 
 }
+
+/***********Photo Library Modal Code ************/
+
+
+.modal-dialog {
+width: 90% !important;
+
+
+
+}
+
+.modal-body {
+overflow: auto;
+height: 500px !important;
+min-height: 300px !important;
+}
+
+.modal_thumbnails {
+
+    width: 150px !important;
+    height: 100px !important;
+}
+
+#set_user_image {
+
+margin:10px !important;
+
+}
+
+
+#modal_sidebar {
+
+position: fixed !important;
+
+}
+
+/*********** End Photo Library Modal Code ************/
+
