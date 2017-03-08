@@ -142,10 +142,12 @@
 			return empty($this->user_image) ? $this->placeholder : $this->upload_directory.DS.$this->user_image;
 		}
 
-		// public function delete_user()
-		// {
-
-		// }
+		public function ajax_save_user_image($user_imgage, $user_id)
+		{
+			$this->user_image = $user_image;
+			$this->id = $user_id;
+			$this->save(); 
+		}
 
 	}
 
