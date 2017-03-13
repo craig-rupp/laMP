@@ -13,6 +13,7 @@
 	if($user) {
 		//echo "caught";
 		$user->delete();
+		$session->message("{$user->username}, #{$user->id} has been deleted");
 		redirect("users.php");
 	} else {
 		redirect("users.php");
