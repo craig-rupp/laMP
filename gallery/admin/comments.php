@@ -45,7 +45,7 @@ $comments = Comment::get_all_items();
                          
                         </h1>
 
-                         <p class="bg-success"></p>
+                         <p class="bg-success"><?php echo $message; ?></p>
 
 
                         <div class="col-md-12">

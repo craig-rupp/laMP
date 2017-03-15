@@ -12,6 +12,7 @@
 
 	if($comment){
 		$comment->delete();
+		$session->message("Comment number, {$comment->id} has been deleted");
 		redirect("comments.php");
 	} else {
 		redirect("comments.php");
