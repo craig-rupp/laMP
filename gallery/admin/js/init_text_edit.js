@@ -53,6 +53,18 @@ $(document).ready(function(){
 		});
 	});
 
+	$('.info-box-header').click(function(){
+		$(".inside").slideToggle("fast");
+
+		$("#toggle").toggleClass("glyphicon-menu-down glyphicon , glyphicon-menu-up glyphicon ");
+	});
+
+	//delete event
+
+	$('.delete-link').click(function(){
+		return confirm("Are you sure you'd like to delete?");
+	});
+
 
 tinymce.init({ selector:'textarea' });
 

@@ -3,10 +3,10 @@
 
 <?php 
     $message = "";
-    if(isset($_POST['submit'])){
+    if(isset($_FILES['file'])){
         $photo = new Photo();
         $photo->title = $_POST['title']; //name from form
-        $photo->set_file($_FILES['file_upload']); //sg key
+        $photo->set_file($_FILES['file']); //sg key
         if($photo->save()){
             $message = "Photo {$photo->filename} was successfully uploaded";
             //echo $message;
@@ -48,7 +48,7 @@
                                             <input type="text" name="title" class="form-control">
                                         </div>
                                         <div class="form-group">
-                                            <input type="file" name="file_upload">
+                                            <input type="file" name="file">
                                         </div>
                                         <input type="submit" name="submit">
                                     </form>     
@@ -56,7 +56,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form action="POST" class="dropzone"></form>
+                                    <form action="upload.php" class="dropzone"></form>
                                 </div>
                             </div>
                         </div>

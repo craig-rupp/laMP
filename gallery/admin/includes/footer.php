@@ -10,9 +10,9 @@
 	<!-- Text Editor -->
     <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
 
+	  <script src="js/init_text_edit.js"></script>
     <script src="js/dropzone.js"></script>
 
-	  <script src="js/init_text_edit.js"></script>
 
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
