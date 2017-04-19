@@ -17,6 +17,7 @@
 	$router->add('', ['controller' => 'Home', 'action' => 'index']);
 	$router->add('posts', ['controller' => 'Posts', 'action' => 'index']);
 	$router->add('posts/new', ['controller' => 'Posts', 'action' => 'new']);
+	$router->add('posts/lizzy', ['controller' => 'Posts', 'action' => 'index']);
 
 	//Display routing table
 	echo '<pre>';
