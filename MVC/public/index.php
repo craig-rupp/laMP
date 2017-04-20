@@ -1,36 +1,30 @@
-<?php 
-	echo "Hello" . "<br>" . "You jabrones" . "<br>";
+<?php
 
-	if(count($_SERVER) >= 1){
-		echo 'Requested URL = "' . $_SERVER['QUERY_STRING'] . '"' . "<br>";
-		echo count($_SERVER) . "<br><br>";
-	} else {
-		echo "NADA";
-	}
+require '../Core/Router.php';
 
-	require_once('../Core/Router.php');
+$router = new Router();
 
-	$router = new Router();
-	echo get_class($router) . "<br><br>";
+// Add the routes
+$router->add('', ['controller' => 'Home', 'action' => 'index']);
+$router->add('posts', ['controller' => 'Posts', 'action' => 'index']);
+$router->add('posts/new', ['controller' => 'Posts', 'action' => 'new']);
+$router->add('{controller}/{action}');
+$router->add('admin/{action}/{controller}');
+$router->add('{controller}/{id:\d+}/{action}');
+    
+//Display the routing table
+echo '<pre>';
+var_dump($router->getRoutes());
+echo '</pre>';
 
-	/* Add the Routes */
-	$router->add('', ['controller' => 'Home', 'action' => 'index']);
-	$router->add('posts', ['controller' => 'Posts', 'action' => 'index']);
-	$router->add('posts/new', ['controller' => 'Posts', 'action' => 'new']);
-	$router->add('posts/lizzy', ['controller' => 'Posts', 'action' => 'index']);
 
-	//Display routing table
-	echo '<pre>';
-	var_dump($router->getRoutes());
-	echo '</pre>' . "<br><br>" . "Query Matches". "<br>";
+// Match the requested route
+$url = $_SERVER['QUERY_STRING'];
 
-	//Match the Requested Route
-	$url = $_SERVER['QUERY_STRING'];
-	if($router->match($url)){
-		echo '<pre>'. '<br>';
-		var_dump($router->getParams());
-		echo '</pre>';
-	} else {
-		echo "No route found for {$url}";
-	}
- ?>
+if ($router->match($url)) {
+    echo '<pre>';
+    var_dump($router->getParams());
+    echo '</pre>';
+} else {
+    echo "No route found for URL '$url'";
+}
